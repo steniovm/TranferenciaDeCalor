@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--
+Autor: Stênio Vinicios de Medeiros
+Transferencia de calor
+Exercicios sobre canvas em arquivo unico
+contato: steniovm@gmail.com
+-->
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta property="og:title" content="Tranferência de Calor" />
+        <meta property="og:description" content="Tranferência de Calor" />
+        <meta property="og:locale" content="pt-br" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="style.css" />
+        <title>Simulador de Transferência de Calor</title>
+    </head>
+    <body>
+        <h1>Tranferência de Calor</h1>
+        <main>
+            <ul class="abas">
+                <li class="aba" id="aba-1">
+                    <a href="#aba-1">Condução</a>
+                    <iframe class="conteudo initaba" src="ConducaoCalor/index.html"></iframe>
+                </li>
+                <li class="aba" id="aba-2">
+                    <a href="#aba-2">Convecção</a>
+                    <iframe class="conteudo" src="ConveccaoCalor/index.html"></iframe>
+                </li>
+                <li class="aba" id="aba-3">
+                    <a href="#aba-3">Radiação</a>
+                    <iframe class="conteudo" src="RadiacaoCalor/index.html"></iframe>
+                </li>
+                <li class="aba" id="aba-4">
+                    <a href="#aba-4">Consulta</a>
+                    <section class="conteudo">
+                        <h2>Consulta</h2>
+                        <div>
+                            <div class="paramen">
+                                <div>
+                                    <div>
+                                        <h3>Lei do resfriamento de Newton</h3>
+                                        <img class="svgs" src="ResfriamentoNewton.svg"/>
+                                        <h3>Calor específico</h3>
+                                        <img class="svgs" src="CalorEspecifico.svg"/>
+                                        <h3>Lei de Stefan-Boltzmann (Irradiação)</h3>
+                                        <img class="svgs" src="Stefan-Boltzmann.svg"/>
+                                        <h3>Lei de Wien (Pico de radiação)</h3>
+                                        <img class="svgs" src="Wien.svg"/>
+                                        <p>Espectro de luz visivel: entre 400 e 750 nm</p>
+                                    </div>
+                                    <div>
+                                        <table cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td><p><b>Material</b></p></td>
+                                                <td><p><b>Calor Especifico (J/kg.K)</b></p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>ouro</p></td>
+                                                <td><p>129</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>chumbo</p></td>
+                                                <td><p>130</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>ouro</p></td>
+                                                <td><p>134</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>mercúrio</p></td>
+                                                <td><p>138</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>prata</p></td>
+                                                <td><p>235</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>latão</p></td>
+                                                <td><p>385</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>zinco</p></td>
+                                                <td><p>389</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>cobre</p></td>
+                                                <td><p>393</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>aço</p></td>
+                                                <td><p>435</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>ferro</p></td>
+                                                <td><p>460</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>carbono</p></td>
+                                                <td><p>502</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>vidro</p></td>
+                                                <td><p>670</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>cimento</p></td>
+                                                <td><p>780</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>lã de vidro</p></td>
+                                                <td><p>800</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>tijolo</p></td>
+                                                <td><p>835</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>areia</p></td>
+                                                <td><p>840</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>rochas</p></td>
+                                                <td><p>879</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>alumínio</p></td>
+                                                <td><p>921</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>oxigênio</p></td>
+                                                <td><p>921</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>ar</p></td>
+                                                <td><p>1005</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>nitrogênio</p></td>
+                                                <td><p>1047</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>papel</p></td>
+                                                <td><p>1340</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>madeira</p></td>
+                                                <td><p>1758</p></td>
+                                            </tr>                                            <tr>
+                                                <td><p>gelo</p></td>
+                                                <td><p>2093</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>álcool</p></td>
+                                                <td><p>2428</p></td>
+                                            </tr>                                            <tr>
+                                                <td><p>água</p></td>
+                                                <td><p>4186</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>hélio</p></td>
+                                                <td><p>5233</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p>hidrogênio</p></td>
+                                                <td><p>14232</p></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="creditos">
+                                        <img id="myimg" class="myimg" src="stenio.jpg" alt="Minha Foto"/>
+                                        <div id="divinfo" class="divinfo">
+                                            <span>Autor: Stênio Vinicios de Medeiros</span>
+                                            <span>Portifolio: <a href="https://steniovm.github.io/steniovm/" alt="Meu portifolio de projetos">https://steniovm.github.io/steniovm/</a></span>
+                                            <span>Email: <a href="mailto:steniovm@gmail.com"  alt="Meu email">steniovm@gmail.com</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </li>
+            </ul>
+        </main>
+        <script type="text/javascript">
+const linksabas = document.querySelectorAll('a');
+const conteudo = document.querySelectorAll('.conteudo');
+//https://pt.wikipedia.org/wiki/Irradia%C3%A7%C3%A3o_t%C3%A9rmica
+linksabas.forEach((item)=>{item.addEventListener('click',function(){
+    document.querySelector('.initaba').classList.remove('initaba');
+});});
+        </script>
+       </body>
+</html>
